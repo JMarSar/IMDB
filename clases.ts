@@ -77,3 +77,11 @@ export class Movie{
                 return resultado
         }
 }
+
+export class Imdb
+{
+    public constructor(Movie[]: string)
+    {
+        this.Movie
+    }
+}
