@@ -46,7 +46,7 @@ export class Movie{
         // Declaracion de atributos y propiedades
         title:string;
         releaseYear:number;
-        //actors: de la clase profesional
+        actors:Professional;
         nacionality:string;
         director:string;
         writer:string;
