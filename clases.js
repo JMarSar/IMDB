@@ -1,3 +1,33 @@
+"use strict";
+exports.__esModule = true;
+exports.Movie = exports.Professional = void 0;
+var Professional = /** @class */ (function () {
+    function Professional(name, age, genre, weight, height, hairColor, eyeColor, race, isRetired, nationality, oscarsNumber, profession) {
+        this.name = name;
+        this.age = age;
+        this.genre = genre;
+        this.weight = weight;
+        this.height = height;
+        this.hairColor = hairColor;
+        this.eyeColor = eyeColor;
+        this.race = race;
+        this.isRetired = isRetired;
+        this.nationality = nationality;
+        this.oscarsNumber = oscarsNumber;
+        this.profession = profession;
+    }
+    Professional.prototype.printAll = function () {
+        var resultado = "";
+        for (var atributo in this) {
+            if (typeof this[atributo] != "function") {
+                resultado += atributo + ": " + this[atributo] + " \n";
+            }
+        }
+        return resultado;
+    };
+    return Professional;
+}());
+exports.Professional = Professional;
 var Movie = /** @class */ (function () {
     // Definimos el constructor
     function Movie(title, releaYear, nacionality, genre) {
@@ -8,12 +38,14 @@ var Movie = /** @class */ (function () {
     }
     // Metodos
     Movie.prototype.printMovieData = function () {
+        var resultado = "";
         for (var dato in this) {
-            if (typeof this[dato] != "function")
-                console.log(dato + ": " + this[dato] + ", " + typeof dato);
+            if (typeof this[dato] != "function") {
+                resultado += dato + ": " + this[dato] + " \n";
+            }
         }
+        return resultado;
     };
     return Movie;
 }());
-var miPelicula = new Movie("harry potter", 2001, "inglesa", 'ficcion');
-miPelicula.printMovieData();
+exports.Movie = Movie;
