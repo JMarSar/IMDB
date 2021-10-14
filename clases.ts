@@ -80,8 +80,10 @@ export class Movie{
 
 export class Imdb
 {
-    public constructor(Movie[]: string)
+    public peliculas: Movie[]
+
+    public constructor(peliculas: Movie[])
     {
-        this.Movie
+        this.peliculas = peliculas;
     }
 }
