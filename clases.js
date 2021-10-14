@@ -1,6 +1,6 @@
 "use strict";
 exports.__esModule = true;
-exports.Movie = exports.Professional = void 0;
+exports.Imdb = exports.Movie = exports.Professional = void 0;
 var Professional = /** @class */ (function () {
     function Professional(name, age, genre, weight, height, hairColor, eyeColor, race, isRetired, nationality, oscarsNumber, profession) {
         this.name = name;
@@ -49,3 +49,10 @@ var Movie = /** @class */ (function () {
     return Movie;
 }());
 exports.Movie = Movie;
+var Imdb = /** @class */ (function () {
+    function Imdb(peliculas) {
+        this.peliculas = peliculas;
+    }
+    return Imdb;
+}());
+exports.Imdb = Imdb;

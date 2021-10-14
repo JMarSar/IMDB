@@ -1,4 +1,4 @@
-import { Professional, Movie } from './clases';
+import { Professional, Movie, Imdb } from './clases';
 
 let raul = new Professional("Raúl", 33, "hombre", 83, 177, "negro", "marrón", "caucásico", false, "España", 0, "piloto de motocross");
 let jorge = new Professional("Jorge", 20, "hombre", 75, 183, "negro", "marrón", "caucásico", false, "España", 1, "programador");
@@ -19,3 +19,6 @@ let movies = [harryPotter, avatar]
 for(let movie of movies){
     console.log(movie.printMovieData()) ;
 }
+
+let myImdb = new Imdb(movies)
+console.log(myImdb)

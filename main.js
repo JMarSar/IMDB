@@ -17,3 +17,5 @@ for (var _a = 0, movies_1 = movies; _a < movies_1.length; _a++) {
     var movie = movies_1[_a];
     console.log(movie.printMovieData());
 }
+var myImdb = new clases_1.Imdb(movies);
+console.log(myImdb);
