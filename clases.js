@@ -1,6 +1,7 @@
 "use strict";
 exports.__esModule = true;
-exports.Imdb = exports.Movie = exports.Professional = void 0;
+exports.jsonConverter = exports.Imdb = exports.Movie = exports.Professional = void 0;
+var fs = require("fs");
 var Professional = /** @class */ (function () {
     function Professional(name, age, genre, weight, height, hairColor, eyeColor, race, isRetired, nationality, oscarsNumber, profession) {
         this.name = name;
@@ -56,3 +57,8 @@ var Imdb = /** @class */ (function () {
     return Imdb;
 }());
 exports.Imdb = Imdb;
+function jsonConverter(objeto) {
+    var convert = JSON.stringify(objeto);
+    fs.writeFileSync("imbbBBDD.json", convert);
+}
+exports.jsonConverter = jsonConverter;

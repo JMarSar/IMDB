@@ -19,3 +19,5 @@ for (var _a = 0, movies_1 = movies; _a < movies_1.length; _a++) {
 }
 var myImdb = new clases_1.Imdb(movies);
 console.log(myImdb);
+// Convertir a JSON
+(0, clases_1.jsonConverter)(myImdb);

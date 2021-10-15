@@ -1,3 +1,5 @@
+import * as fs from 'fs';
+
 export class Professional {
     public name: string;
     public age: number;
@@ -86,4 +88,11 @@ export class Imdb
     {
         this.peliculas = peliculas;
     }
+}
+
+export function jsonConverter(objeto:Imdb) {
+        var convert = JSON.stringify(objeto)
+
+        fs.writeFileSync("imbbBBDD.json", convert)
+        
 }
