@@ -1,6 +1,6 @@
 "use strict";
 exports.__esModule = true;
-exports.jsonConverter = exports.Imdb = exports.Movie = exports.Professional = void 0;
+exports.jsonToImdb = exports.imdbToJson = exports.Imdb = exports.Movie = exports.Professional = void 0;
 var fs = require("file-system");
 var Professional = /** @class */ (function () {
     function Professional(name, age, genre, weight, height, hairColor, eyeColor, race, isRetired, nationality, oscarsNumber, profession) {
@@ -57,8 +57,13 @@ var Imdb = /** @class */ (function () {
     return Imdb;
 }());
 exports.Imdb = Imdb;
-function jsonConverter(objeto) {
+function imdbToJson(objeto) {
     var convert = JSON.stringify(objeto);
-    fs.writeFileSync("imbbBBDD.json", convert);
+    fs.writeFileSync("imdbBBDD.json", convert);
 }
-exports.jsonConverter = jsonConverter;
+exports.imdbToJson = imdbToJson;
+function jsonToImdb(ruta) {
+    var convert = fs.readFileSync(ruta);
+    JSON.parse(convert);
+}
+exports.jsonToImdb = jsonToImdb;

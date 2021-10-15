@@ -90,9 +90,16 @@ export class Imdb
     }
 }
 
-export function jsonConverter(objeto:Imdb) {
-        var convert = JSON.stringify(objeto)
+export function imdbToJson(objeto:Imdb) {
+        let convert = JSON.stringify(objeto)
 
-        fs.writeFileSync("imbbBBDD.json", convert)
+        fs.writeFileSync("imdbBBDD.json", convert)
         
+}
+
+export function jsonToImdb(ruta:string)
+{
+        let convert = fs.readFileSync(ruta)
+        JSON.parse(convert);
+
 }
