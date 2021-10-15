@@ -1,7 +1,7 @@
 "use strict";
 exports.__esModule = true;
 exports.jsonConverter = exports.Imdb = exports.Movie = exports.Professional = void 0;
-var fs = require("fs");
+var fs = require("file-system");
 var Professional = /** @class */ (function () {
     function Professional(name, age, genre, weight, height, hairColor, eyeColor, race, isRetired, nationality, oscarsNumber, profession) {
         this.name = name;

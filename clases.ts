@@ -1,4 +1,4 @@
-import * as fs from 'fs';
+import * as fs from 'file-system';
 
 export class Professional {
     public name: string;
