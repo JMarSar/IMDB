@@ -24,5 +24,9 @@ console.log(myImdb);
 //imdbToJson(myImdb)
 //jsonToImdb("imdbBBDD.json")
 // Probar metodos
-myImdb.escribirEnFicheroJSON("imdbBBDD.json");
-console.log(myImdb.obternerInstanciaIMDB("imdbBBDD.json"));
+var nombreFichero = "imdbBBDD.json";
+myImdb.escribirEnFicheroJSON(nombreFichero);
+//console.log(myImdb.obternerInstanciaIMDB(nombreFichero))
+// Insertar nueva pelicula por consola
+(0, clases_1.nuevaPelicula)(movies, myImdb, nombreFichero);
+//console.log(myImdb.obternerInstanciaIMDB(nombreFichero))

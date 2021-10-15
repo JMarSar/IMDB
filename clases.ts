@@ -1,4 +1,5 @@
 import * as fs from 'file-system';
+import * as rls from "readline-sync";
 
 export class Professional {
     public name: string;
@@ -115,3 +116,30 @@ export function jsonToImdb(ruta:string)
         JSON.parse(convert);
 
 }
+
+export function nuevaPelicula(movies:Movie[], imdb:Imdb, nombreFichero:string) {
+        let title:string = rls.question("Título de la película: ")
+        let releaseYear:number = parseInt(rls.question("Año de estreno: "))
+        let nationality:string = rls.question("Nacionalidad de la pelicula: ")
+        let director:string = rls.question("Director: ")
+        let writer:string = rls.question("Guionista: ")
+        let language:string = rls.question("Idioma original: ")
+        //let isMCU:boolean = rls.question("Es del universo marvel: ")
+        let mainCharacterName:string = rls.question("Nombre del protagonista: ")
+        let producer:string = rls.question("Productor: ")
+        let distributor:string = rls.question("Distribuidor: ")
+        let genre:string = rls.question("Genero: ")
+
+        let newMovie = new Movie(title, releaseYear, nationality, genre)
+        newMovie.director = director;
+        newMovie.writer = writer;
+        newMovie.language = language;
+        newMovie.mainCharacterName = mainCharacterName;
+        newMovie.producer = producer;
+        newMovie.distributor = distributor;
+
+        movies.push(newMovie)
+        imdb.peliculas = movies
+        imdb.escribirEnFicheroJSON(nombreFichero)
+}
+// title:string, releaseYear:number, actors:Professional, nacionality:string, director:string, writer:string, language:string, plataform:string, isMCU:boolean, mainCharacterName:string, producer:string, distributor:string, genre:string

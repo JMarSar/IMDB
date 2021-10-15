@@ -1,7 +1,8 @@
 "use strict";
 exports.__esModule = true;
-exports.jsonToImdb = exports.imdbToJson = exports.Imdb = exports.Movie = exports.Professional = void 0;
+exports.nuevaPelicula = exports.jsonToImdb = exports.imdbToJson = exports.Imdb = exports.Movie = exports.Professional = void 0;
 var fs = require("file-system");
+var rls = require("readline-sync");
 var Professional = /** @class */ (function () {
     function Professional(name, age, genre, weight, height, hairColor, eyeColor, race, isRetired, nationality, oscarsNumber, profession) {
         this.name = name;
@@ -76,3 +77,28 @@ function jsonToImdb(ruta) {
     JSON.parse(convert);
 }
 exports.jsonToImdb = jsonToImdb;
+function nuevaPelicula(movies, imdb, nombreFichero) {
+    var title = rls.question("Título de la película: ");
+    var releaseYear = parseInt(rls.question("Año de estreno: "));
+    var nationality = rls.question("Nacionalidad de la pelicula: ");
+    var director = rls.question("Director: ");
+    var writer = rls.question("Guionista: ");
+    var language = rls.question("Idioma original: ");
+    //let isMCU:boolean = rls.question("Es del universo marvel: ")
+    var mainCharacterName = rls.question("Nombre del protagonista: ");
+    var producer = rls.question("Productor: ");
+    var distributor = rls.question("Distribuidor: ");
+    var genre = rls.question("Genero: ");
+    var newMovie = new Movie(title, releaseYear, nationality, genre);
+    newMovie.director = director;
+    newMovie.writer = writer;
+    newMovie.language = language;
+    newMovie.mainCharacterName = mainCharacterName;
+    newMovie.producer = producer;
+    newMovie.distributor = distributor;
+    movies.push(newMovie);
+    imdb.peliculas = movies;
+    imdb.escribirEnFicheroJSON(nombreFichero);
+}
+exports.nuevaPelicula = nuevaPelicula;
+// title:string, releaseYear:number, actors:Professional, nacionality:string, director:string, writer:string, language:string, plataform:string, isMCU:boolean, mainCharacterName:string, producer:string, distributor:string, genre:string

@@ -1,4 +1,4 @@
-import { Professional, Movie, Imdb, imdbToJson, jsonToImdb } from './clases';
+import { Professional, Movie, Imdb, imdbToJson, jsonToImdb, nuevaPelicula } from './clases';
 
 let raul = new Professional("Raúl", 33, "hombre", 83, 177, "negro", "marrón", "caucásico", false, "España", 0, "piloto de motocross");
 let jorge = new Professional("Jorge", 20, "hombre", 75, 183, "negro", "marrón", "caucásico", false, "España", 1, "programador");
@@ -30,6 +30,11 @@ console.log(myImdb)
 //jsonToImdb("imdbBBDD.json")
 
 // Probar metodos
+let nombreFichero = "imdbBBDD.json"
 
-myImdb.escribirEnFicheroJSON("imdbBBDD.json")
-console.log(myImdb.obternerInstanciaIMDB("imdbBBDD.json"))
+myImdb.escribirEnFicheroJSON(nombreFichero)
+//console.log(myImdb.obternerInstanciaIMDB(nombreFichero))
+
+// Insertar nueva pelicula por consola
+nuevaPelicula(movies, myImdb, nombreFichero)
+//console.log(myImdb.obternerInstanciaIMDB(nombreFichero))
