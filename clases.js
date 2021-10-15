@@ -54,6 +54,15 @@ var Imdb = /** @class */ (function () {
     function Imdb(peliculas) {
         this.peliculas = peliculas;
     }
+    Imdb.prototype.escribirEnFicheroJSON = function (nombreFichero) {
+        fs.writeFileSync(nombreFichero, JSON.stringify(this.peliculas));
+    };
+    Imdb.prototype.obternerInstanciaIMDB = function (nombreFichero) {
+        var aux = fs.readFileSync(nombreFichero);
+        aux = JSON.parse(aux);
+        var res = new Imdb(aux);
+        return res;
+    };
     return Imdb;
 }());
 exports.Imdb = Imdb;

@@ -12,7 +12,8 @@ for (var _i = 0, actores_1 = actores; _i < actores_1.length; _i++) {
 }
 var harryPotter = new clases_1.Movie("Harry Potter", 2002, "inglesa", "ficcion");
 var avatar = new clases_1.Movie("Avatar", 2012, "eeuu", "ciencia ficcion");
-var movies = [harryPotter, avatar];
+var loImposible = new clases_1.Movie("Lo Imposible", 2015, "española", "Documental");
+var movies = [harryPotter, avatar, loImposible];
 for (var _a = 0, movies_1 = movies; _a < movies_1.length; _a++) {
     var movie = movies_1[_a];
     console.log(movie.printMovieData());
@@ -20,5 +21,8 @@ for (var _a = 0, movies_1 = movies; _a < movies_1.length; _a++) {
 var myImdb = new clases_1.Imdb(movies);
 console.log(myImdb);
 // Convertir a JSON
-(0, clases_1.imdbToJson)(myImdb);
-(0, clases_1.jsonToImdb)("imdbBBDD.json");
+//imdbToJson(myImdb)
+//jsonToImdb("imdbBBDD.json")
+// Probar metodos
+myImdb.escribirEnFicheroJSON("imdbBBDD.json");
+console.log(myImdb.obternerInstanciaIMDB("imdbBBDD.json"));

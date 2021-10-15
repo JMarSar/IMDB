@@ -88,6 +88,18 @@ export class Imdb
     {
         this.peliculas = peliculas;
     }
+
+    escribirEnFicheroJSON(nombreFichero:string){
+            fs.writeFileSync(nombreFichero, JSON.stringify(this.peliculas))
+    }
+
+    obternerInstanciaIMDB(nombreFichero:string):Imdb{
+        let aux = fs.readFileSync(nombreFichero)
+        aux = JSON.parse(aux);
+        let res = new Imdb(aux)
+
+        return res
+    }
 }
 
 export function imdbToJson(objeto:Imdb) {

@@ -13,8 +13,9 @@ for(let actor of actores){
 
 let harryPotter = new Movie("Harry Potter", 2002, "inglesa", "ficcion")
 let avatar = new Movie("Avatar", 2012, "eeuu", "ciencia ficcion")
+let loImposible = new Movie("Lo Imposible", 2015, "española", "Documental")
 
-let movies = [harryPotter, avatar]
+let movies = [harryPotter, avatar, loImposible]
 
 for(let movie of movies){
     console.log(movie.printMovieData()) ;
@@ -24,6 +25,11 @@ let myImdb = new Imdb(movies)
 console.log(myImdb)
 
 // Convertir a JSON
-imdbToJson(myImdb)
+//imdbToJson(myImdb)
 
-jsonToImdb("imdbBBDD.json")
+//jsonToImdb("imdbBBDD.json")
+
+// Probar metodos
+
+myImdb.escribirEnFicheroJSON("imdbBBDD.json")
+console.log(myImdb.obternerInstanciaIMDB("imdbBBDD.json"))
