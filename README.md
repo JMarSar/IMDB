@@ -1,2 +1,4 @@
 # IMDB
-Repositorio mini proyecto, IMDBBBDD
+Repositorio mini proyecto, IMDB BBDD
+
+Programado por Raúl Casas y Jorge Marrero
